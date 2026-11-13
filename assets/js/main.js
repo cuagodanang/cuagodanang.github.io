@@ -92,11 +92,6 @@
   fc.innerHTML = `<a href="${TEL}">Gọi ${HOTLINE}</a><a href="lien-he.html">Nhận báo giá</a>`;
   if (page !== 'lien-he.html') document.body.append(fc);
 
-  const badge = document.createElement('div');
-  badge.className = 'demo-badge';
-  badge.textContent = 'Bản demo';
-  document.body.append(badge);
-
   /* ── Hero trình chiếu ────────────────────────── */
   const slides = document.querySelectorAll('.hero__media img');
   if (slides.length) {
@@ -241,16 +236,25 @@
     activate(parts[0].dataset.part);
   }
 
-  /* ── Form demo ───────────────────────────────── */
+  /* ── Form Nhận báo giá (gửi qua FormSubmit về email) ── */
   const form = document.getElementById('quote-form');
   if (form) {
-    const q = new URLSearchParams(location.search).get('kieu');
-    if (q) { const r = form.querySelector(`input[name="kieu"][value="${q}"]`); if (r) r.checked = true; }
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
+    const params = new URLSearchParams(location.search);
+    const q = params.get('kieu');
+    if (q) { const r = form.querySelector(`input[data-k="${q}"]`); if (r) r.checked = true; }
+    if (params.has('da-gui')) {               // FormSubmit chuyển về đây sau khi gửi thành công
       form.classList.add('is-sent');
-      window.scrollTo({ top: form.parentElement.offsetTop - 120, behavior: 'smooth' });
+      setTimeout(() => form.parentElement.scrollIntoView({ block: 'center' }), 300);
+    }
+    const next = form.querySelector('input[name="_next"]');
+    if (next) next.value = new URL('lien-he.html?da-gui=1', location.href).href;
+    form.addEventListener('submit', e => {
+      if (!form.reportValidity()) { e.preventDefault(); return; }
+      const f = form.querySelector('input[type=file]');
+      if (f && f.files[0] && f.files[0].size > 5 * 1024 * 1024) {
+        e.preventDefault(); alert('Ảnh đính kèm tối đa 5MB. Bạn có thể gửi ảnh qua Zalo 0935 645 327.'); return;
+      }
+      const b = form.querySelector('button[type=submit]'); b.disabled = true; b.textContent = 'Đang gửi…';
     });
   }
 })();

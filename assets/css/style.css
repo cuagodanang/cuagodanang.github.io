@@ -358,8 +358,6 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
 }
 
-.demo-badge { position: fixed; z-index: 60; right: 12px; bottom: 12px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; background: var(--cam-15); color: var(--xam-70); padding: 6px 10px; }
-@media (max-width: 700px) { .demo-badge { bottom: auto; top: calc(var(--header-h) + 8px); } }
 
 /* ── Gỗ Teak & bảng so sánh gỗ ──────────────────── */
 .teak-points { margin: 32px 0 0; }
@@ -384,7 +382,7 @@ p { margin: 0 0 1em; }
 }
 .gallery img { border-radius: 0; }
 
-.demo-badge, .chip { border-radius: var(--r-pill); }
+.chip { border-radius: var(--r-pill); }
 .btn-quote, .float-call a { border-radius: 10px; } /* nút Nhận báo giá: hình chữ nhật bo góc */
 .btn-quote { padding-left: 22px; padding-right: 22px; }
 .btn-lg { padding: 16px 30px; }

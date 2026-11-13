@@ -21,26 +21,31 @@
   <section class="wrap" style="padding-bottom:clamp(72px,10vw,160px)">
     <div class="grid-12" style="border-top:1px solid var(--muc-tau);padding-top:40px">
       <div style="grid-column:1/-1" class="contact-main">
-        <form class="form" id="quote-form" novalidate>
-          <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="ten" required autocomplete="name"></div>
-          <div class="field"><label for="sdt">Số điện thoại / Zalo</label><input id="sdt" name="sdt" type="tel" required autocomplete="tel"></div>
+        <form class="form" id="quote-form" action="https://formsubmit.co/cuongchau0702@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Yêu cầu báo giá mới – Cửa Gỗ Đà Nẵng">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://cevin8888.github.io/lien-he.html?da-gui=1">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="Họ và tên" required autocomplete="name"></div>
+          <div class="field"><label for="sdt">Số điện thoại / Zalo</label><input id="sdt" name="Số điện thoại / Zalo" type="tel" required pattern="[0-9 +.]{9,15}" autocomplete="tel"></div>
           <div class="field field--full"><label>Kiểu cửa quan tâm</label>
             <div class="choice-row">
-              <label><input type="radio" name="kieu" value="mot-canh"><span>Một cánh</span></label>
-              <label><input type="radio" name="kieu" value="hai-canh"><span>Hai cánh</span></label>
-              <label><input type="radio" name="kieu" value="me-con" checked><span>Mẹ – con ô kính</span></label>
-              <label><input type="radio" name="kieu" value="xoay-truc"><span>Xoay trục</span></label>
-              <label><input type="radio" name="kieu" value="lua-kinh"><span>Lùa kính</span></label>
-              <label><input type="radio" name="kieu" value="chua-ro"><span>Chưa rõ, cần tư vấn</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Một cánh" data-k="mot-canh"><span>Một cánh</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Hai cánh" data-k="hai-canh"><span>Hai cánh</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Mẹ – con ô kính" data-k="me-con" checked><span>Mẹ – con ô kính</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Xoay trục" data-k="xoay-truc"><span>Xoay trục</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Lùa kính" data-k="lua-kinh"><span>Lùa kính</span></label>
+              <label><input type="radio" name="Kiểu cửa" value="Chưa rõ, cần tư vấn" data-k="chua-ro"><span>Chưa rõ, cần tư vấn</span></label>
             </div>
           </div>
-          <div class="field"><label for="rong">Chiều rộng ô cửa (mm)</label><input id="rong" name="rong" inputmode="numeric" placeholder="Ví dụ 1800"></div>
-          <div class="field"><label for="cao">Chiều cao ô cửa (mm)</label><input id="cao" name="cao" inputmode="numeric" placeholder="Ví dụ 2700"></div>
-          <div class="field"><label for="tinh">Tỉnh / thành phố công trình</label><input id="tinh" name="tinh" placeholder="Đà Nẵng"></div>
-          <div class="field"><label for="anh">Ảnh mặt tiền / bản vẽ (nếu có)</label><input id="anh" name="anh" type="file" accept="image/*,.pdf" multiple style="font-size:15px"></div>
-          <div class="field field--full"><label for="ghichu">Ghi chú</label><textarea id="ghichu" name="ghichu" placeholder="Phong cách mong muốn, thời gian cần lắp…"></textarea></div>
+          <div class="field"><label for="rong">Chiều rộng ô cửa (mm)</label><input id="rong" name="Chiều rộng ô cửa (mm)" inputmode="numeric" placeholder="Ví dụ 1800"></div>
+          <div class="field"><label for="cao">Chiều cao ô cửa (mm)</label><input id="cao" name="Chiều cao ô cửa (mm)" inputmode="numeric" placeholder="Ví dụ 2700"></div>
+          <div class="field"><label for="tinh">Tỉnh / thành phố công trình</label><input id="tinh" name="Tỉnh / thành phố" placeholder="Đà Nẵng"></div>
+          <div class="field"><label for="anh">Ảnh mặt tiền / bản vẽ (nếu có, tối đa 5MB)</label><input id="anh" name="attachment" type="file" accept="image/*,.pdf" style="font-size:15px"></div>
+          <div class="field field--full"><label for="ghichu">Ghi chú</label><textarea id="ghichu" name="Ghi chú" placeholder="Phong cách mong muốn, thời gian cần lắp…"></textarea></div>
           <div class="field--full" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
-            <p class="form-note" style="margin:0">Bản demo: form chưa gửi dữ liệu đi đâu.</p>
+            <p class="form-note" style="margin:0">Thông tin chỉ dùng để tư vấn và báo giá cho bạn.</p>
             <button class="btn-quote btn-lg" type="submit">Gửi yêu cầu</button>
           </div>
         </form>
