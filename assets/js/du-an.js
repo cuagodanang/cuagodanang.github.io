@@ -103,7 +103,7 @@ window.PROJECTS = [
     gallery: [W + 'glam-beauty-1.jpg', W + 'glam-beauty-2.jpg', W + 'glam-beauty-3.jpg', W + 'glam-beauty-4.jpg', W + 'glam-beauty-5.jpg', W + 'glam-beauty-6.jpg'],
     scope: 'Cửa hàng mỹ phẩm: cổng vòm thương hiệu, kệ trưng bày, vách hồng và trần sọc.' },
   { id: 'muji-times-city', name: 'MUJI Times City', cat: 'ban-le', loc: 'Hà Nội', img: W + 'muji-times-city-0.jpg',
-    gallery: [W + 'muji-times-city-0.jpg', W + 'muji-times-city-r1.jpg', W + 'muji-times-city-r2.jpg', W + 'muji-times-city-r3.jpg', W + 'muji-times-city-r4.jpg', W + 'muji-times-city-r5.jpg', W + 'muji-times-city-r6.jpg', W + 'muji-times-city-1.jpg', W + 'muji-times-city-2.jpg', W + 'muji-times-city-3.jpg', W + 'muji-times-city-4.jpg', W + 'muji-times-city-5.jpg'],
+    gallery: [W + 'muji-times-city-0.jpg', W + 'muji-times-city-hd1.jpg', W + 'muji-times-city-hd2.jpg', W + 'muji-times-city-hd3.jpg', W + 'muji-times-city-hd4.jpg', W + 'muji-times-city-hd5.jpg', W + 'muji-times-city-hd6.jpg', W + 'muji-times-city-1.jpg', W + 'muji-times-city-2.jpg', W + 'muji-times-city-3.jpg', W + 'muji-times-city-4.jpg', W + 'muji-times-city-5.jpg'],
     scope: 'Mặt tiền đỏ đặc trưng, khung cửa và cột ốp ván OSB, hệ kệ gỗ sáng và quầy thu ngân. 7 ảnh đầu là cửa hàng đã hoàn thiện: khu nội thất, quầy café ốp OSB, khu thực phẩm, văn phòng phẩm và thời trang; 5 ảnh cuối là phối cảnh 3D.', featured: true },
   { id: 'happy-money-438', name: 'Happy Money 438 Hùng Vương', cat: 'ban-le', loc: 'Đà Nẵng', img: W + 'happy-money-438-1.jpg',
     gallery: [W + 'happy-money-438-1.jpg', W + 'happy-money-438-2.jpg', W + 'happy-money-438-3.jpg', W + 'happy-money-438-4.jpg', W + 'happy-money-438-5.jpg', W + 'happy-money-438-6.jpg'],
