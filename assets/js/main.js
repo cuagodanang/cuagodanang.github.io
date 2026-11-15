@@ -124,9 +124,11 @@
   /* ── Thẻ dự án ───────────────────────────────── */
   window.projectCard = function (p, opts = {}) {
     const loc = p.loc || '';
+    const tall = opts.tall || p.cat === 'cua-go';   // ảnh cửa chụp dọc → khung 3:4 để thấy trọn bộ cửa
+    const pos = p.focus ? ` style="object-position:${p.focus}"` : '';
     const img = p.img
-      ? `<div class="card__img${opts.tall ? ' card__img--tall' : ''}"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>`
-      : `<div class="card__img card__img--placeholder${opts.tall ? ' card__img--tall' : ''}"><img src="assets/img/logo-mark.png" alt=""><span>${p.name}</span></div>`;
+      ? `<div class="card__img${tall ? ' card__img--tall' : ''}"><img src="${p.img}" alt="${p.name}" loading="lazy"${pos}></div>`
+      : `<div class="card__img card__img--placeholder${tall ? ' card__img--tall' : ''}"><img src="assets/img/logo-mark.png" alt=""><span>${p.name}</span></div>`;
     return `<a class="card reveal" href="du-an-chi-tiet.html?id=${p.id}">${img}
       <div class="card__body"><span class="card__title">${p.name}</span><span class="card__meta">${loc}</span></div></a>`;
   };
