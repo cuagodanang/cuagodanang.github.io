@@ -7,7 +7,6 @@
   const NAV = [
     ['cua-chinh.html', 'Cửa chính'],
     ['du-an.html', 'Dự án'],
-    ['thu-vien-anh.html', 'Thư viện ảnh'],
     ['vat-lieu.html', 'Vật liệu'],
     ['ve-chung-toi.html', 'Về chúng tôi'],
   ];
