@@ -7,6 +7,7 @@
   const NAV = [
     ['cua-chinh.html', 'Cửa chính'],
     ['du-an.html', 'Dự án'],
+    ['thu-vien-anh.html', 'Thư viện ảnh'],
     ['vat-lieu.html', 'Vật liệu'],
     ['ve-chung-toi.html', 'Về chúng tôi'],
   ];
@@ -246,6 +247,10 @@
     if (q) { const r = form.querySelector(`input[data-k="${q}"]`); if (r) r.checked = true; }
     if (params.has('da-gui')) {               // FormSubmit chuyển về đây sau khi gửi thành công
       form.classList.add('is-sent');
+      // Đếm 1 lượt gửi báo giá thành công (GTM → GA4: generate_lead), rồi bỏ ?da-gui để tải lại không đếm trùng
+      (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_name: 'nhan-bao-gia' });
+      params.delete('da-gui');
+      history.replaceState(null, '', location.pathname + (params.toString() ? '?' + params : '') + location.hash);
       setTimeout(() => form.parentElement.scrollIntoView({ block: 'center' }), 300);
     }
     const next = form.querySelector('input[name="_next"]');
