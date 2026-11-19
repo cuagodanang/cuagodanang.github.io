@@ -455,3 +455,23 @@ main figure.card { border-radius: 0; overflow: visible; transform: none; } /* ch
 
 /* Thanh tiến trình cuộn trang */
 .scroll-progress { position: fixed; z-index: 70; left: 0; right: 0; top: 0; height: 2px; background: var(--dat-nung); transform: scaleX(0); transform-origin: left; pointer-events: none; }
+
+/* ── Thước Lỗ Ban (cua-chinh.html) ─────────────── */
+.lb-tool { margin-top: clamp(32px, 4vw, 56px); display: grid; gap: clamp(32px, 4vw, 48px); }
+.lb-dim__head { display: grid; grid-template-columns: minmax(180px, 260px) 1fr; gap: var(--gutter); align-items: end; margin-bottom: 16px; }
+.lb-kq { border-left: 3px solid var(--xam-40); padding: 2px 0 2px 18px; }
+.lb-kq.is-tot { border-left-color: var(--dat-nung); }
+.lb-cung { font-size: clamp(20px, 2vw, 26px); margin: 0; }
+.lb-goiy { margin: 8px 0 0; font-size: 15px; color: var(--xam-70); }
+.lb-nhay { font-weight: 500; color: var(--muc-tau); border-bottom: 1px solid var(--dat-nung); }
+.lb-nhay:hover { color: var(--dat-nung); }
+.lb-ruler { position: relative; height: 104px; border: 1px solid var(--muc-tau); cursor: grab; touch-action: pan-y; user-select: none; overflow: hidden; }
+.lb-ruler.is-keo { cursor: grabbing; }
+.lb-ruler:focus-visible { outline: 2px solid var(--dat-nung); outline-offset: 2px; }
+.lb-ruler canvas { display: block; width: 100%; height: 100%; }
+.lb-hd { font-size: 14px; margin: -16px 0 0; }
+.lb-tag { display: inline-block; vertical-align: middle; font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 3px 7px; margin-left: 6px; background: var(--xam-15); color: var(--xam-70); }
+.is-tot .lb-tag, .lb-tot .lb-tag { background: var(--dat-nung); color: var(--giay-moc); }
+.lb-table td:nth-child(2) { white-space: nowrap; }
+.lb-table tr:not(.lb-tot) td { color: var(--xam-70); }
+@media (max-width: 760px) { .lb-dim__head { grid-template-columns: 1fr; } }

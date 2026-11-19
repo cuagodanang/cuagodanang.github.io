@@ -213,6 +213,43 @@
     </div>
   </section>
 
+  <!-- THƯỚC LỖ BAN -->
+  <section class="section wrap" id="lo-ban">
+    <div class="sec-head" style="border-top:1px solid var(--muc-tau)">
+      <p class="label">Kích thước Lỗ Ban</p>
+      <div class="sec-head__body">
+        <h2 class="h2">Ô cửa lọt lòng rơi vào cung tốt của thước 52,2cm.</h2>
+        <p class="muted" style="margin-top:20px;max-width:62ch">Với cửa đi, cửa sổ, cửa cổng, kích thước được tính theo <strong style="font-weight:500">khoảng thông thủy</strong> (lọt lòng, lọt gió) — phần trống còn lại sau khi trừ khung bao — và đo bằng thước Lỗ Ban 52,2cm (522mm). Ví dụ cửa phòng phủ bì 910 × 2200mm, trừ khung còn thông thủy 810 × 2150mm: rộng 810 rơi cung <em>Tiến bửu</em>, cao 2150 rơi cung <em>Thông minh</em> — cả hai đều tốt. Cửa phòng vệ sinh theo quan niệm không cần áp.</p>
+      </div>
+    </div>
+
+    <div class="lb-tool reveal">
+      <div class="lb-dim">
+        <div class="lb-dim__head">
+          <div class="field"><label for="lb-rong">Rộng thông thủy (mm)</label><input id="lb-rong" type="number" inputmode="numeric" min="100" max="10000" value="810"></div>
+          <div class="lb-kq" aria-live="polite"></div>
+        </div>
+        <div class="lb-ruler" tabindex="0" role="slider" aria-label="Thước Lỗ Ban – chiều rộng"><canvas></canvas></div>
+      </div>
+      <div class="lb-dim">
+        <div class="lb-dim__head">
+          <div class="field"><label for="lb-cao">Cao thông thủy (mm)</label><input id="lb-cao" type="number" inputmode="numeric" min="100" max="10000" value="2150"></div>
+          <div class="lb-kq" aria-live="polite"></div>
+        </div>
+        <div class="lb-ruler" tabindex="0" role="slider" aria-label="Thước Lỗ Ban – chiều cao"><canvas></canvas></div>
+      </div>
+      <p class="muted lb-hd">Nhập số hoặc kéo thước sang trái / phải. Vạch cam ở giữa là kích thước đang đo.</p>
+    </div>
+
+    <div class="table-scroll" style="margin-top:clamp(40px,5vw,72px)">
+      <table class="spec-table lb-table">
+        <thead><tr><th>Cung lớn</th><th>Trong mỗi chu kỳ 522mm</th><th>5 cung nhỏ</th></tr></thead>
+        <tbody id="lb-bang"></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:14px;margin-top:16px">Thước lặp lại mỗi 522mm: lấy kích thước (mm) chia cho 522, phần dư cho biết rơi vào cung nào. Mỗi cung lớn dài 65,25mm, chia 5 cung nhỏ 13,05mm. Thước Lỗ Ban là quan niệm dân gian, có nhiều loại thước khác nhau; chúng tôi dùng loại thông dụng nhất. Bếp, bậc dùng thước 429mm; bàn thờ, tủ dùng thước 388mm.</p>
+  </section>
+
   <!-- QUY TRÌNH -->
   <section class="section wrap">
     <div class="sec-head" style="border-top:1px solid var(--muc-tau)">
@@ -264,5 +301,6 @@
 <script src="assets/js/du-an.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/hieu-ung.js"></script>
+<script src="assets/js/lo-ban.js"></script>
 </body>
 </html>
