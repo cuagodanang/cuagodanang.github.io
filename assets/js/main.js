@@ -7,7 +7,7 @@
   const NAV = [
     ['cua-chinh.html', 'Cửa chính'],
     ['du-an.html', 'Dự án'],
-    ['vat-lieu.html', 'Vật liệu'],
+    ['nha-cung-cap.html', 'Nhà cung cấp'],
     ['ve-chung-toi.html', 'Về chúng tôi'],
   ];
   const page = location.pathname.split('/').pop() || 'index.html';
@@ -21,7 +21,7 @@
       <span class="brand__name">Cửa Gỗ Đà Nẵng<span class="brand__sub">by Sunflower</span></span>
     </a>
     <nav class="nav" aria-label="Chính">
-      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page === 'du-an-chi-tiet.html') ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
+      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page === 'du-an-chi-tiet.html') || (h === 'nha-cung-cap.html' && page === 'phu-kien-cua.html') ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
       <a class="btn-quote" href="lien-he.html">Nhận báo giá</a>
     </nav>
     <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button>`;
@@ -261,6 +261,13 @@
         e.preventDefault(); alert('Ảnh đính kèm tối đa 5MB. Bạn có thể gửi ảnh qua Zalo 0935 645 327.'); return;
       }
       const b = form.querySelector('button[type=submit]'); b.disabled = true; b.textContent = 'Đang gửi…';
+    });
+  }
+  /* ── Mở trang có #mục: cuộn lại đúng chỗ sau khi ảnh tải xong (ảnh làm trang dịch chuyển) ── */
+  if (location.hash.length > 1) {
+    window.addEventListener('load', () => {
+      const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
     });
   }
 })();

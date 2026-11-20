@@ -475,3 +475,43 @@ main figure.card { border-radius: 0; overflow: visible; transform: none; } /* ch
 .lb-table td:nth-child(2) { white-space: nowrap; }
 .lb-table tr:not(.lb-tot) td { color: var(--xam-70); }
 @media (max-width: 760px) { .lb-dim__head { grid-template-columns: 1fr; } }
+/* Thước cao nằm dọc + hình ô cửa theo tỉ lệ */
+.lb-doc { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: var(--gutter); align-items: stretch; }
+.lb-ruler--doc { height: 520px; touch-action: none; }
+.lb-cua { margin: 0; display: flex; align-items: center; justify-content: center; border: 1px solid var(--xam-15); padding: clamp(8px, 2vw, 24px); }
+.lb-cua svg { display: block; width: 100%; max-height: 420px; }
+.lb-cua__ghi { font-size: 14px; margin: 16px 0 0; max-width: 72ch; }
+.lb-cua__ghi strong { font-weight: 500; color: var(--muc-tau); }
+@media (max-width: 600px) { .lb-doc { grid-template-columns: minmax(0, 1fr) 180px; gap: 10px; } .lb-ruler--doc { height: 440px; } .lb-cua { padding: 8px; } }
+
+/* ── Phụ kiện cửa: thẻ hãng ───────────────────── */
+.brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gutter); }
+.brand-card { border-top: 1px solid var(--muc-tau); padding-top: 20px; display: flex; flex-direction: column; gap: 16px; }
+.brand-card .h1 { margin: 0; }
+.brand-card > p.muted { margin: 0; max-width: 46ch; }
+.brand-card__list { list-style: none; margin: 8px 0 0; padding: 0; }
+.brand-card__list li { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--xam-15); font-size: 15px; color: var(--xam-70); }
+.brand-card__list span { color: var(--muc-tau); }
+@media (max-width: 860px) { .brand-grid { grid-template-columns: 1fr; row-gap: 56px; } .brand-card__list li { grid-template-columns: 1fr; gap: 4px; } }
+.brand-card__logo { display: flex; align-items: center; height: 56px; }
+.brand-card__logo img { max-height: 40px; max-width: 200px; width: auto; height: auto; mix-blend-mode: multiply; }
+.brand-card__site { align-self: flex-start; font-size: 15px; }
+
+/* ── Nhà cung cấp ─────────────────────────────── */
+.supplier-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.supplier-nav a { border: 1px solid var(--muc-tau); border-radius: var(--r-pill); padding: 8px 16px; font-size: 14px; }
+.supplier-nav a::after { display: none; }
+.supplier-cat { padding-bottom: clamp(32px, 4vw, 56px); scroll-margin-top: calc(var(--header-h) + 16px); }
+.supplier-cat .h1 { margin: 0; }
+.supplier-cat__logos { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; margin-top: 32px; }
+.supplier-cat__logos img { height: 28px; width: auto; max-width: 160px; object-fit: contain; mix-blend-mode: multiply; }
+.supplier-cat__soon { margin-top: 24px; font-size: 14px; color: var(--xam-70); font-style: italic; }
+.supplier-cat__more { display: inline-block; margin-top: 24px; font-size: 15px; }
+.supplier-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--gutter); margin-top: 32px; }
+.supplier-item { display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid var(--xam-15); }
+.supplier-item::after { display: none; }
+.supplier-item img { height: 28px; width: auto; max-width: 160px; object-fit: contain; object-position: left; mix-blend-mode: multiply; margin-bottom: 6px; }
+.supplier-item__name { font-size: 20px; }
+.supplier-item__desc { font-size: 15px; color: var(--xam-70); }
+.supplier-item__site { font-size: 14px; }
+.supplier-item img.is-tall { height: 52px; max-width: 220px; }
