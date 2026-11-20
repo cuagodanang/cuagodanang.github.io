@@ -344,7 +344,8 @@ p { margin: 0 0 1em; }
 @media (max-width: 700px) {
   .float-call { display: flex; position: fixed; z-index: 40; left: 16px; right: 16px; bottom: 16px; gap: 8px; }
   .float-call a { flex: 1; text-align: center; padding: 14px; font-size: 15px; font-weight: 500; background: var(--muc-tau); color: var(--giay-moc); }
-  .float-call a:last-child { background: var(--dat-nung); }
+  .float-call a:last-child { background: var(--dat-nung); flex: 1.4; }
+  .float-call a.float-call__zalo { background: #0068ff; color: #fff; }
   .site-footer { padding-bottom: 96px; }
   .hero__content { padding-bottom: 92px; }
 }
@@ -515,3 +516,9 @@ main figure.card { border-radius: 0; overflow: visible; transform: none; } /* ch
 .supplier-item__desc { font-size: 15px; color: var(--xam-70); }
 .supplier-item__site { font-size: 14px; }
 .supplier-item img.is-tall { height: 52px; max-width: 220px; }
+
+/* Bản đồ xưởng (trang Liên hệ) */
+.ban-do { margin-top: clamp(40px, 6vw, 72px); position: relative; }
+.ban-do iframe { display: block; width: 100%; height: clamp(300px, 42vw, 460px); border: 0; border-radius: var(--r-lg); filter: grayscale(.25); }
+.ban-do__nut { position: absolute; left: 16px; bottom: 16px; }
+@media (max-width: 600px) { .ban-do__nut { position: static; display: block; text-align: center; margin-top: 12px; } }

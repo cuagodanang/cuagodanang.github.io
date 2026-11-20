@@ -75,7 +75,7 @@
             <span class="label">Liên hệ</span>
             <a href="${TEL}">${HOTLINE}</a>
             <a href="${ZALO}" target="_blank" rel="noopener">Zalo</a>
-            <span style="display:block;padding:3px 0">Xưởng: 123 Dũng Sĩ Điện Ngọc, Điện Bàn, Đà Nẵng</span>
+            <a href="https://maps.app.goo.gl/Zf6oBNodQs65Wsz58" target="_blank" rel="noopener">Xưởng: 123 Dũng Sĩ Điện Ngọc, Điện Bàn, Đà Nẵng ↗</a>
             <span style="display:block;padding:3px 0">Thi công toàn quốc</span>
           </div>
         </div>
@@ -89,8 +89,16 @@
 
   const fc = document.createElement('div');
   fc.className = 'float-call';
-  fc.innerHTML = `<a href="${TEL}">Gọi ${HOTLINE}</a><a href="lien-he.html">Nhận báo giá</a>`;
+  fc.innerHTML = `<a href="${TEL}">Gọi ngay</a><a class="float-call__zalo" href="${ZALO}" target="_blank" rel="noopener">Zalo</a><a href="lien-he.html">Nhận báo giá</a>`;
   if (page !== 'lien-he.html') document.body.append(fc);
+
+  /* ── Video: chỉ tải khi sắp cuộn tới (đỡ tốn 4G) ── */
+  const lazyVids = document.querySelectorAll('video[data-src]');
+  const loadVid = v => { v.src = v.dataset.src; v.removeAttribute('data-src'); v.play && v.play().catch(() => {}); };
+  if ('IntersectionObserver' in window) {
+    const vo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { loadVid(e.target); vo.unobserve(e.target); } }), { rootMargin: '300px 0px' });
+    lazyVids.forEach(v => vo.observe(v));
+  } else lazyVids.forEach(loadVid);
 
   /* ── Hero trình chiếu ────────────────────────── */
   const slides = document.querySelectorAll('.hero__media img');
