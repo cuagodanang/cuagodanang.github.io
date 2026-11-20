@@ -17,14 +17,17 @@ window.CATS = {
 
 window.PROJECTS = [
   // ── Cửa gỗ — ảnh thi công thực tế (album Google Photos "CỬA GỖ") ──
+  { id: 'cua-cau-thang-teak-anh-hung', name: 'Cửa và cầu thang gỗ Teak nhà anh Hưng', cat: 'cua-go', loc: 'Đà Nẵng', year: 2026, img: T + 'teak-anh-hung-2.jpg', focus: '40% 50%',
+    gallery: [T + 'teak-anh-hung-2.jpg', T + 'teak-anh-hung-1.jpg', T + 'teak-anh-hung-3.jpg', T + 'teak-anh-hung-6.jpg', T + 'teak-anh-hung-4.jpg', T + 'teak-anh-hung-5.jpg'],
+    scope: 'Cửa chính xoay trục gỗ Teak soi rãnh, ô kính cố định khung gỗ, khoá điện tử Philips; cầu thang và tay vịn gỗ Teak, lan can sắt sơn đen', featured: true },
   { id: 'cua-me-con-cua-so-tron', name: 'Cửa mẹ – con ô kính, nhà cửa sổ tròn', cat: 'cua-go', loc: 'Ngũ Hành Sơn, Đà Nẵng', year: 2026, img: T + 'cua-so-tron-1-sach.jpg', focus: '72% 50%',
     gallery: [T + 'cua-so-tron-2.jpg', T + 'cua-so-tron-1-sach.jpg', T + 'cua-so-tron-3.jpg', T + 'cua-so-tron-4.jpg'],
     scope: 'Cánh lớn gỗ Teak ghép vân ngang, cánh phụ ô kính chia song, đồng bộ cửa sổ khung gỗ', featured: true },
   { id: 'cua-xoay-truc-op-da', name: 'Cửa xoay trục ô kính hai bên', cat: 'cua-go', loc: 'Đà Nẵng', year: 2026, img: T + 'op-da-1-sach.jpg',
     gallery: [T + 'op-da-1-sach.jpg', T + 'op-da-2.jpg', ...f(81)],
     scope: 'Cánh xoay trục gỗ Teak soi rãnh, hai ô kính cố định khung gỗ, mặt tiền ốp đá tự nhiên', featured: true },
-  { id: 'cua-lam-go-ghep', name: 'Cửa xoay trục lam gỗ ghép', cat: 'cua-go', loc: 'Đà Nẵng', year: 2026, img: T + 'cua-chinh-lam-ghep.jpg',
-    gallery: [T + 'lam-ghep-1.jpg', T + 'lam-ghep-2.jpg', T + 'lam-ghep-3.jpg', T + 'lam-ghep-4.jpg', ...f(94, 96, 98)],
+  { id: 'cua-lam-go-ghep', name: 'Cửa xoay trục lam gỗ ghép', cat: 'cua-go', loc: 'Đà Nẵng', year: 2026, img: T + 'lam-ghep-bia.jpg', focus: '52% 50%',
+    gallery: [T + 'lam-ghep-bia.jpg', T + 'lam-ghep-1.jpg', T + 'lam-ghep-2.jpg', T + 'lam-ghep-3.jpg', T + 'lam-ghep-4.jpg', ...f(96, 98)],
     scope: 'Mặt cánh phối lam gỗ đứng và tấm gỗ phẳng, khoá điện tử âm cánh', featured: true },
   { id: 'cua-xoay-truc-hien-nha', name: 'Cửa xoay trục hiên nhà', cat: 'cua-go', loc: 'Đà Nẵng', year: 2025, img: T + 'hien-nha-1.jpg',
     gallery: [T + 'hien-nha-4.jpg', T + 'hien-nha-1.jpg', T + 'hien-nha-2.jpg', T + 'hien-nha-3.jpg', ...f(31, 32)],
