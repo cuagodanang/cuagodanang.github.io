@@ -8,6 +8,7 @@
     ['cua-chinh.html', 'Cửa chính'],
     ['du-an.html', 'Dự án'],
     ['nha-cung-cap.html', 'Nhà cung cấp'],
+    ['tin-tuc.html', 'Tin tức'],
     ['ve-chung-toi.html', 'Về chúng tôi'],
   ];
   const page = location.pathname.split('/').pop() || 'index.html';
@@ -21,7 +22,7 @@
       <span class="brand__name">Cửa Gỗ Đà Nẵng<span class="brand__sub">by Sunflower</span></span>
     </a>
     <nav class="nav" aria-label="Chính">
-      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page === 'du-an-chi-tiet.html') || (h === 'nha-cung-cap.html' && page === 'phu-kien-cua.html') ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
+      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page === 'du-an-chi-tiet.html') || (h === 'nha-cung-cap.html' && page === 'phu-kien-cua.html') || (h === 'tin-tuc.html' && page.startsWith('tin-tuc-')) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
       <a class="btn-quote" href="lien-he.html">Nhận báo giá</a>
     </nav>
     <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button>`;
