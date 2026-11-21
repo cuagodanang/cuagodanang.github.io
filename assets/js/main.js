@@ -131,12 +131,14 @@
   observeReveal();
 
   /* ── Thẻ dự án ───────────────────────────────── */
+  // Ảnh nhỏ (1080px) cho thẻ dự án, sinh bằng cong-cu-website/tao-trang-du-an.py
+  const nho = src => /^assets\/img\/.+\.jpe?g$/i.test(src) ? src.replace('assets/img/', 'assets/img/nho/') : src;
   window.projectCard = function (p, opts = {}) {
     const loc = p.loc || '';
     const tall = opts.tall || p.cat === 'cua-go';   // ảnh cửa chụp dọc → khung 3:4 để thấy trọn bộ cửa
     const pos = p.focus ? ` style="object-position:${p.focus}"` : '';
     const img = p.img
-      ? `<div class="card__img${tall ? ' card__img--tall' : ''}"><img src="${p.img}" alt="${p.name}" loading="lazy"${pos}></div>`
+      ? `<div class="card__img${tall ? ' card__img--tall' : ''}"><img src="${nho(p.img)}" onerror="this.onerror=null;this.src='${p.img}'" alt="${p.name}" loading="lazy"${pos}></div>`
       : `<div class="card__img card__img--placeholder${tall ? ' card__img--tall' : ''}"><img src="assets/img/logo-mark.png" alt=""><span>${p.name}</span></div>`;
     return `<a class="card reveal" href="du-an-${p.id}.html">${img}
       <div class="card__body"><span class="card__title">${p.name}</span><span class="card__meta">${loc}</span></div></a>`;
@@ -212,6 +214,14 @@
     }));
     activate(parts[0].dataset.part);
   }
+
+  /* ── Đếm lượt bấm Gọi / Zalo (GTM → GA4: goi_dien, nhan_zalo) ── */
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    const h = a.getAttribute('href');
+    const ev = h.startsWith('tel:') ? 'goi_dien' : /zalo\.me/.test(h) ? 'nhan_zalo' : '';
+    if (ev) (window.dataLayer = window.dataLayer || []).push({ event: ev, link_url: h });
+  });
 
   /* ── Form Nhận báo giá (gửi qua FormSubmit về email) ── */
   const form = document.getElementById('quote-form');
