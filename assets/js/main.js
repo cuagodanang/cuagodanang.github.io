@@ -22,7 +22,7 @@
       <span class="brand__name">Cửa Gỗ Đà Nẵng<span class="brand__sub">by Sunflower</span></span>
     </a>
     <nav class="nav" aria-label="Chính">
-      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page === 'du-an-chi-tiet.html') || (h === 'nha-cung-cap.html' && page === 'phu-kien-cua.html') || (h === 'tin-tuc.html' && page.startsWith('tin-tuc-')) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
+      ${NAV.map(([h, t]) => `<a href="${h}"${page === h || (h === 'du-an.html' && page.startsWith('du-an-')) || (h === 'nha-cung-cap.html' && page === 'phu-kien-cua.html') || (h === 'tin-tuc.html' && page.startsWith('tin-tuc-')) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
       <a class="btn-quote" href="lien-he.html">Nhận báo giá</a>
     </nav>
     <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button>`;
@@ -138,7 +138,7 @@
     const img = p.img
       ? `<div class="card__img${tall ? ' card__img--tall' : ''}"><img src="${p.img}" alt="${p.name}" loading="lazy"${pos}></div>`
       : `<div class="card__img card__img--placeholder${tall ? ' card__img--tall' : ''}"><img src="assets/img/logo-mark.png" alt=""><span>${p.name}</span></div>`;
-    return `<a class="card reveal" href="du-an-chi-tiet.html?id=${p.id}">${img}
+    return `<a class="card reveal" href="du-an-${p.id}.html">${img}
       <div class="card__body"><span class="card__title">${p.name}</span><span class="card__meta">${loc}</span></div></a>`;
   };
 
@@ -163,7 +163,7 @@
         grid.innerHTML = list.map(p => projectCard(p)).join('');
       } else {
         grid.className = 'project-list';
-        grid.innerHTML = list.map(p => `<a href="du-an-chi-tiet.html?id=${p.id}"><span>${p.name}</span><span class="muted">${CATS[p.cat]}</span><span class="muted">${p.loc || '—'}</span><span class="muted">${p.year || ''}</span></a>`).join('');
+        grid.innerHTML = list.map(p => `<a href="du-an-${p.id}.html"><span>${p.name}</span><span class="muted">${CATS[p.cat]}</span><span class="muted">${p.loc || '—'}</span><span class="muted">${p.year || ''}</span></a>`).join('');
       }
       observeReveal(grid);
     }
@@ -190,43 +190,9 @@
     observeReveal(featured);
   }
 
-  /* ── Trang chi tiết dự án ────────────────────── */
-  const detail = document.getElementById('project-detail');
-  if (detail && window.PROJECTS) {
-    const id = new URLSearchParams(location.search).get('id');
-    const idx = Math.max(0, PROJECTS.findIndex(p => p.id === id));
-    const p = PROJECTS[idx];
-    document.title = p.name + ' — Cửa Gỗ Đà Nẵng';
-    const gal = p.gallery || (p.img ? [p.img] : []);
-    const related = PROJECTS.filter(x => x.cat === p.cat && x.id !== p.id && x.img).slice(0, 3);
-    detail.innerHTML = `
-      <section class="page-hero wrap">
-        <p class="label label--accent"><a href="du-an.html?loai=${p.cat}">${CATS[p.cat]}</a></p>
-        <h1 class="display" style="margin-top:24px">${p.name}</h1>
-      </section>
-      <section class="wrap">
-        <dl class="facts">
-          <div><dt>Hạng mục</dt><dd>${CATS[p.cat]}</dd></div>
-          <div><dt>Địa điểm</dt><dd>${p.loc || 'Đang cập nhật'}</dd></div>
-          <div><dt>Năm</dt><dd>${p.year || 'Đang cập nhật'}</dd></div>
-          <div><dt>Trạng thái</dt><dd>${p.status || 'Hoàn thành'}</dd></div>
-        </dl>
-        ${p.scope ? `<p class="lead" style="max-width:820px;margin-top:48px">${p.scope}</p>` : ''}
-      </section>
-      <section class="wrap section--tight">
-        ${gal.length ? `<div class="gallery">${gal.map(g => `<figure class="reveal"><img src="${g}" alt="${p.name}" loading="lazy"></figure>`).join('')}</div>`
-          : `<div class="card__img card__img--placeholder" style="aspect-ratio:21/9"><img src="assets/img/logo-mark.png" alt=""><span>Hình ảnh dự án đang được cập nhật</span></div>`}
-      </section>
-      ${related.length ? `<section class="wrap section--tight">
-        <div class="sec-head"><p class="label">Dự án cùng hạng mục</p><div class="sec-head__body"></div></div>
-        <div class="project-grid">${related.map(r => projectCard(r)).join('')}</div>
-      </section>` : ''}
-      <section class="wrap section--tight" style="display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--muc-tau);padding-top:24px">
-        <a class="link-arrow" href="du-an.html">Tất cả dự án</a>
-        <a class="link-arrow" href="du-an-chi-tiet.html?id=${PROJECTS[(idx + 1) % PROJECTS.length].id}">Dự án tiếp theo</a>
-      </section>`;
-    observeReveal(detail);
-  }
+  /* ── Trang chi tiết dự án ────────────────────
+     Mỗi dự án đã có trang riêng du-an-<id>.html (sinh bằng cong-cu-website/tao-trang-du-an.py).
+     Link cũ du-an-chi-tiet.html?id=... tự chuyển sang trang mới (xem du-an-chi-tiet.html). */
 
   /* ── Sơ đồ giải phẫu bộ cửa ──────────────────── */
   const anatomy = document.querySelector('.anatomy');
