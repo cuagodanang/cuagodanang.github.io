@@ -76,6 +76,7 @@
             <span class="label">Liên hệ</span>
             <a href="${TEL}">${HOTLINE}</a>
             <a href="${ZALO}" target="_blank" rel="noopener">Zalo</a>
+            <a href="https://www.facebook.com/cuagodanang43/" target="_blank" rel="noopener">Facebook ↗</a>
             <a href="https://maps.app.goo.gl/Zf6oBNodQs65Wsz58" target="_blank" rel="noopener">Xưởng: 123 Dũng Sĩ Điện Ngọc, Điện Bàn, Đà Nẵng ↗</a>
             <span style="display:block;padding:3px 0">Thi công toàn quốc</span>
           </div>
