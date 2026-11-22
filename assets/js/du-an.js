@@ -59,18 +59,12 @@ window.PROJECTS = [
     gallery: [T + 'chu-tho-1.jpg', T + 'chu-tho-2.jpg', ...f(21, 24)], scope: 'Cửa hai cánh phong cách Á Đông, chữ Thọ phay CNC giữa cánh' },
 
   // ── Cửa gỗ — bổ sung từ ảnh thật trên fanpage Cửa Gỗ Đà Nẵng ──
-  { id: 'nha-vuon-cua-vom', name: 'Nhà vườn cửa vòm gỗ tự nhiên', cat: 'cua-go', loc: '', img: f(119)[0],
-    gallery: f(119, 118, 121, 125, 120, 124, 116, 117, 122), scope: 'Trọn bộ cửa đi, cửa vòm ô tròn, cửa lùa và cửa sổ khung gỗ tự nhiên cho nhà vườn một tầng' },
-  { id: 'cua-xoay-truc-mat-tien-xanh', name: 'Cửa xoay trục mặt tiền cây xanh', cat: 'cua-go', loc: '', img: f(63)[0],
-    gallery: f(63, 64, 62, 65, 66, 67, 68, 69), scope: 'Cánh xoay trục gỗ soi rãnh khổ lớn, điểm nhấn tay nắm tròn, khung bao gỗ đồng bộ vách kính' },
   { id: 'nha-pho-cua-so-chia-o', name: 'Nhà phố cửa sổ chia ô', cat: 'cua-go', loc: '', img: f(84)[0],
     gallery: f(84, 83, 85, 87, 88, 89, 90, 91, 92), scope: 'Cửa đi và cửa sổ chia ô kính sơn màu, cửa phòng pano sơn trắng, sàn gỗ đồng bộ' },
   { id: 'cua-pano-hanh-lang', name: 'Hệ cửa phòng pano gỗ', cat: 'cua-go', loc: 'Ngũ Hành Sơn, Đà Nẵng', year: 2025, img: f(113)[0],
     gallery: f(113, 112, 114, 115, 111, 133, 134, 135, 138, 132), scope: 'Cửa phòng pano chia ô gỗ tự nhiên màu nâu đỏ, lắp đặt đồng loạt cho công trình nhiều phòng' },
   { id: 'cua-xoay-truc-hoa-xuan', name: 'Cửa xoay trục vách kính khung gỗ', cat: 'cua-go', loc: 'Cẩm Lệ, Đà Nẵng', year: 2025, img: f(41)[0],
     gallery: f(41, 42), scope: 'Cánh xoay trục gỗ soi rãnh, vách kính lớn khung gỗ đồng bộ' },
-  { id: 'cua-vom-oval', name: 'Cửa ô oval và cửa sổ lá gỗ', cat: 'cua-go', loc: '', img: f(33)[0],
-    gallery: f(33, 34), scope: 'Cửa đi ô oval nan gỗ, cửa sổ cánh lá gỗ tự nhiên phối kính' },
   { id: 'cua-chinh-kho-lon', name: 'Cửa chính khổ lớn hai ô kính', cat: 'cua-go', loc: '', img: f(4)[0],
     gallery: f(4, 5, 10), scope: 'Cánh gỗ khổ lớn, hai ô kính cố định khung gỗ, khoá điện tử' },
   { id: 'cua-van-ngang-nhs', name: 'Cửa xoay trục vân ngang', cat: 'cua-go', loc: 'Ngũ Hành Sơn, Đà Nẵng', year: 2026, img: T + 'van-ngang-1.jpg', focus: '40% 50%',
@@ -89,8 +83,6 @@ window.PROJECTS = [
     scope: 'Cửa phòng mặt phẳng vân sồi, khung bao bản rộng và ốp vách kịch trần cùng vân, tay nắm gạt inox; đồng bộ trần ốp gỗ và vách đá sảnh thang máy' },
   { id: 'mat-tien-son-tra', name: 'Mặt tiền cửa gỗ Triệu Việt Vương', cat: 'cua-go', loc: 'Sơn Trà, Đà Nẵng', year: 2025, img: f(17)[0],
     gallery: f(17, 18), scope: 'Cửa đi gỗ pano và ô thoáng lá sách cho mặt tiền nhà phố' },
-  { id: 'mono-coffee-lab', name: 'Mono Coffee Lab', cat: 'cua-go', loc: '', img: f(11)[0],
-    gallery: f(11), scope: 'Mặt tiền quán cà phê: cửa đi và cửa sổ khung gỗ chia ô kính' },
   { id: 'cua-cham-khac', name: 'Cửa gỗ chạm khắc cổ điển', cat: 'cua-go', loc: '', img: f(20)[0],
     gallery: f(20, 1), scope: 'Cửa gỗ tự nhiên chạm khắc hoa văn, phong cách cổ điển' },
 
