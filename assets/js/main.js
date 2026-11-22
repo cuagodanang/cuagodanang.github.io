@@ -108,6 +108,10 @@
     const dots = document.querySelector('.hero__dots');
     const caps = document.querySelectorAll('[data-hero-cap]');
     let i = 0, timer;
+    // Ảnh 2, 3 chỉ tải sau khi trang đã mở xong, để ảnh đầu hiện nhanh trên điện thoại
+    const nap = s => { if (s.dataset.src && !s.src) { if (s.dataset.srcset) s.srcset = s.dataset.srcset; s.src = s.dataset.src; } };
+    const napHet = () => slides.forEach(nap);
+    if (document.readyState === 'complete') setTimeout(napHet, 1500); else window.addEventListener('load', () => setTimeout(napHet, 1500));
     slides.forEach((_, k) => {
       const b = document.createElement('button');
       b.setAttribute('aria-label', 'Ảnh ' + (k + 1));
@@ -116,6 +120,7 @@
     });
     function show(k) {
       i = k;
+      nap(slides[k]);
       slides.forEach((s, n) => s.classList.toggle('is-active', n === k));
       dots && [...dots.children].forEach((d, n) => d.classList.toggle('is-active', n === k));
       caps.forEach(c => c.textContent = slides[k].dataset.caption || '');
