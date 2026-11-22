@@ -324,7 +324,7 @@ p { margin: 0 0 1em; }
 .form.is-sent + .form-done { display: block; }
 
 .contact-list dt { margin-top: 28px; }
-.contact-list dd { margin: 6px 0 0; font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.01em; }
+.contact-list dd { margin: 6px 0 0; font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.01em; overflow-wrap: anywhere; }
 .contact-list dd a:hover { color: var(--dat-nung); }
 
 /* ── Footer ─────────────────────────────────────── */
